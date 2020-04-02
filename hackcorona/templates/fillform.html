@@ -1,0 +1,13 @@
+{% load crispy_forms_tags %}
+<form method="POST" action="" enctype="multipart/form-data">
+    <br>
+    {% csrf_token %}
+    <div style="margin-left: 1.5em;">
+        {{ form|crispy }}
+    </div>
+    
+        <button type="submit" action="{% url 'home' %}">
+            Submit
+        </button>
+
+</form>
