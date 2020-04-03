@@ -1,14 +1,14 @@
 from django.shortcuts import render,redirect
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect,HttpResponse
 from django.urls import reverse
 from .forms import PassForm
 from django.utils import timezone
 from io import BytesIO
-from django.http import HttpResponse
 from django.template.loader import get_template
 from django.views import View
 from xhtml2pdf import pisa
 from .models import PassModel
+from django.utils.translation import template
 
 
 # Create your views here.
@@ -41,23 +41,30 @@ def render_to_pdf(template_src, context_dict={}):
 
 
 class ViewPDF(View):
-	def get(self, request, *args, **kwargs):
-		pdf = render_to_pdf('pdf.html')
-		return HttpResponse(pdf, content_type='application/pdf')
-
+    def get(self, request,uniquenumber,*args, **kwargs):
+        if PassModel.objects.filter(uniquenumber=uniquenumber).exists():
+            context={
+                'a': PassModel.objects.get(uniquenumber=uniquenumber),
+            }
+            pdf =render_to_pdf('pdf.html',context)
+            return HttpResponse(pdf,content_type='application/pdf')
 
 class DownloadPDF(View):
-	def get(self, request, *args, **kwargs):
-		pdf = render_to_pdf('pdf.html')
-		response = HttpResponse(pdf, content_type='application/pdf')
-		filename = "LockdownPass.pdf"
-		content = "attachment; filename='%s'" %(filename)
-		response['Content-Disposition'] = content
-		return response
-
-
+    def get(self,request,uniquenumber,*args, **kwargs):
+        if PassModel.objects.filter(uniquenumber=uniquenumber).exists():
+            context={
+                'a':PassModel.objects.get(uniquenumber=uniquenumber),
+            }
+            pdf=render_to_pdf('pdf.html',context)
+            response=HttpResponse(pdf,content_type='application/pdf')
+            filename = "LockdownPass.pdf"
+            content = "attachment; filename='%s'" %(filename)
+            response['Content-Disposition'] = content
+            return response
 
 def index(request,uniquenumber):
-    if PassModel.objects.filter(uniquenumber=uniquenumber).exists():
-        context={}
-        return render(request, 'pdf_template.html', context=context)
+    if PassModel.objects.filter(uniquenumber=uniquenumber).exists:
+        context={
+            'a':PassModel.objects.get(uniquenumber=uniquenumber)
+        }
+        return render(request,'pdf_template.html',context=context)
