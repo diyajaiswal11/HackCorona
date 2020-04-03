@@ -7,4 +7,4 @@ class PassForm(ModelForm):
     class Meta:
         model= PassModel
         fields='__all__'
-        exclude=['issuedate']
+        exclude=['issuedate','uniquenumber']
