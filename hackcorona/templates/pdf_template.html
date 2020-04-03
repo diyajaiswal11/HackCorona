@@ -22,7 +22,7 @@
 		border: 2px solid #464042!important;
 		border-radius: 20px;
 		margin: 10vh 30vw;
-		height: 25vh;
+		height: 30vh;
 		background-color: rgba(202, 165, 165, 0.733)!important;
 	}
 	.apply1{
@@ -31,9 +31,22 @@
 		margin-left: auto;
 		margin-right: auto;
 		background-color: #ff3372;
-		height: 29vh;
-		width: 15vw;
-	
+		height: 7vh;
+		width: 10vw;
+		float: left;
+		margin-left: 9vw;
+	}
+	.apply2
+	{
+	float: right;
+	color: white;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #ff3372;
+	height: 7vh;
+	width: 10vw;
+	margin-right: 9vw;
 	}
   </style>
 </head>
@@ -80,8 +93,8 @@
 					
 					<p class="title">Your Lockdown Pass is Ready!</p>
 					<div style="text-align: center;">
-					<a class="apply1" href="{% url 'pdf_view' a.uniquenumber %}" >View Pass</a>
-					<a class="apply1"  href="{% url 'pdf_download' a.uniquenumber %}">Download Pass</a>
+					<button onClick="location.href='{% url 'pdf_view' a.uniquenumber %}'" class="apply1" >View Pass</a>
+					<button onClick="location.href='{% url 'pdf_download' a.uniquenumber %}'"class="apply2">Download Pass</a>
 					</div>
 				</div>
 				</div>
