@@ -20,7 +20,7 @@
 </head>
 <body>
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Lockdown Epass Generator</a>
+    <a class="navbar-brand" href="{% url 'home' %}">Lockdown Epass Generator</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -34,10 +34,10 @@
       <form class="form-inline my-2 my-lg-0">
         <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="helpline.html" class="home">Helpline<span class="sr-only"></span></a>
+          <a class="nav-link" href="#" class="home">Helpline<span class="sr-only"></span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="precautions.html" class="home">Precautions <span class="sr-only"></span></a>
+          <a class="nav-link" href="{% url 'precautions' %}" class="home">Precautions <span class="sr-only"></span></a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="{% url 'faqpage' %}" class="home">FAQs<span class="sr-only"></span></a>
