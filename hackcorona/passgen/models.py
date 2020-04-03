@@ -18,12 +18,12 @@ subcategory_choices = (
     ("Power/Electricity","Power/Electricity"),
     ("Sanitation","Sanitation"),
     ("Businessman","Businessman"),
-
 ) 
-
-# Create your models here.
+districtchoices=(
+    ('Noida','Noida'),
+)
 class PassModel(models.Model):
-    district=models.CharField(max_length=20,null=True)
+    district=models.CharField(max_length=20,choices=districtchoices)
     name=models.CharField(max_length=200,null=True)
     email=models.CharField(max_length=200,null=True)
     vehiclenumber=models.CharField(max_length=200,null=True)
@@ -32,7 +32,8 @@ class PassModel(models.Model):
     address=models.CharField(max_length=200,null=True)
     reason=models.CharField(max_length=200,null=True)
     issuedate=models.DateTimeField(default=timezone.now)
-    passcategory=models.CharField(max_length=30,choices = category_choices) 
-    subcategory=models.CharField(max_length=30,choices = subcategory_choices) 
+    passcategory=models.CharField(max_length=30,choices=category_choices) 
+    subcategory=models.CharField(max_length=30,choices=subcategory_choices) 
     attachphoto=models.ImageField(upload_to='profile_pics')
     attachidproof=models.ImageField(upload_to='id_proof')
+
