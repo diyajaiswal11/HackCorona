@@ -14,6 +14,11 @@ from django.utils.translation import template
 def home(request):
     return render(request,'home.html')
 
+def faqpage(request):
+    return render(request,'faq.html')
+
+def precautions(request):
+    return render(request,'precautions.html')
 
 def fillform(request):
     if request.method=="POST":
