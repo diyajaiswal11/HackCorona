@@ -36,3 +36,4 @@ class PassModel(models.Model):
     subcategory=models.CharField(max_length=30,choices = subcategory_choices) 
     attachphoto=models.ImageField(upload_to='profile_pics')
     attachidproof=models.ImageField(upload_to='id_proof')
+    uniquenumber=models.CharField(max_length=10000,default=201301)
