@@ -21,7 +21,7 @@
 </head>
 <body>
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Lockdown Epass Generator</a>
+    <a class="navbar-brand" href="{% url 'home' %}">Lockdown Epass Generator</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -53,6 +53,7 @@
 <br>
 <br>
 <form method="POST" action="" enctype="multipart/form-data">
+    <br>
     <br>
     {% csrf_token %}
     <div style="margin-left: 25.5em;margin-right:25.5em;color:white">
