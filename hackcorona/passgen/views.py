@@ -10,7 +10,6 @@ from xhtml2pdf import pisa
 from .models import PassModel
 from django.utils.translation import template
 
-
 # Create your views here.
 def home(request):
     return render(request,'home.html')
@@ -42,29 +41,39 @@ def render_to_pdf(template_src, context_dict={}):
 
 class ViewPDF(View):
     def get(self, request,uniquenumber,*args, **kwargs):
-        if PassModel.objects.filter(uniquenumber=uniquenumber).exists():
-            context={
-                'a': PassModel.objects.get(uniquenumber=uniquenumber),
-            }
-            pdf =render_to_pdf('pdf.html',context)
-            return HttpResponse(pdf,content_type='application/pdf')
+        try:
+            if PassModel.objects.filter(uniquenumber=uniquenumber).exists():
+                context={
+                    'a': PassModel.objects.get(uniquenumber=uniquenumber),
+                }
+                pdf =render_to_pdf('pdf.html',context)
+                return HttpResponse(pdf,content_type='application/pdf')
+        except PassModel.DoesNotExist:
+            return redirect('fillform')
 
 class DownloadPDF(View):
     def get(self,request,uniquenumber,*args, **kwargs):
-        if PassModel.objects.filter(uniquenumber=uniquenumber).exists():
-            context={
-                'a':PassModel.objects.get(uniquenumber=uniquenumber),
-            }
-            pdf=render_to_pdf('pdf.html',context)
-            response=HttpResponse(pdf,content_type='application/pdf')
-            filename = "LockdownPass.pdf"
-            content = "attachment; filename='%s'" %(filename)
-            response['Content-Disposition'] = content
-            return response
+        try:
+            if PassModel.objects.filter(uniquenumber=uniquenumber).exists():
+                context={
+                    'a':PassModel.objects.get(uniquenumber=uniquenumber),
+                }
+                pdf=render_to_pdf('pdf.html',context)
+                response=HttpResponse(pdf,content_type='application/pdf')
+                filename = "LockdownPass.pdf"
+                content = "attachment; filename='%s'" %(filename)
+                response['Content-Disposition'] = content
+                return response
+        except PassModel.DoesNotExist:
+            return redirect('fillform')
 
 def index(request,uniquenumber):
-    if PassModel.objects.filter(uniquenumber=uniquenumber).exists:
-        context={
-            'a':PassModel.objects.get(uniquenumber=uniquenumber)
-        }
-        return render(request,'pdf_template.html',context=context)
+    try:
+        if PassModel.objects.filter(uniquenumber=uniquenumber).exists:
+            context={
+                'a':PassModel.objects.get(uniquenumber=uniquenumber)
+            }
+            return render(request,'pdf_template.html',context=context)
+    except PassModel.DoesNotExist:
+        return redirect('fillform')
+
