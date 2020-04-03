@@ -27,8 +27,8 @@
 				<div class="card card-body">
 					 <div class="text-center"> 
 					<h3>Your Lockdown Pass is Ready!</h3>
-					<a class="btn btn-info" href="{% url 'pdf_view' %}" target="_blank">View Pass</a>
-					<a class="btn btn-info"  href="{% url 'pdf_download' %}">Download Pass</a>
+					<a class="btn btn-info" href="{% url 'pdf_view' a.uniquenumber %}">View Pass</a>
+					<a class="btn btn-info"  href="{% url 'pdf_download' a.uniquenumber %}">Download Pass</a>
 					</div>
 				</div>
 			</div>
