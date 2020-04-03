@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Covid-19</title>
+	<title>HackCorona</title>
 	 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="{% static 'icontitle.png' %}" />
-  <link href="{% static 'https://fonts.googleapis.com/css?family=Raleway&display=swap' %}" rel="stylesheet">
-<link rel="stylesheet" href="{% static 'https://use.fontawesome.com/releases/v5.5.0/css/all.css' %}" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -15,12 +15,12 @@
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="{% static 'hackcoro1.css' %}">
-  
+  <link rel="stylesheet" type="text/css" href="{% static 'precautions.css' %}">
+
 </head>
 <body>
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Lockdown Epass Generator</a>
+	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="hackcoro1.html">Lockdown Epass Generator</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -34,13 +34,13 @@
       <form class="form-inline my-2 my-lg-0">
         <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="helpline.html" class="home">Helpline<span class="sr-only"></span></a>
+          <a class="nav-link" href="helpline.html" class="home">Helpline<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="{% url 'precautions' %}" class="home">Precautions <span class="sr-only"></span></a>
+          <a class="nav-link" href="precautions.html" class="home">Precautions <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="{% url 'faqpage' %}" class="home">FAQs<span class="sr-only"></span></a>
+          <a class="nav-link" href="faq.html" class="home">FAQs<span class="sr-only">(current)</span></a>
         </li>
 
         
@@ -49,27 +49,33 @@
     </div>
   </nav>
 
-  <div class="box1">
-    <p class="title">Get your Epass Online!</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="prec">
+	<p class="he">PRECAUTIONS</p>
+	<ol type="1" class="lis">
+
+		<li>Avoid close contact with people who are sick. Maintain at least three feet distance between yourself and anyone who is coughing or sneezing.</li>
+		<li>Avoid touching your eyes, nose, and mouth.</li>
+		<li>Stay home when you are sick.</li>
+    <li>Cover your cough or sneeze with a tissue, then dispose of the tissue safely.</li>
+    <li>Clean and disinfect frequently-touched objects and surfaces using a regular household cleaning spray or wipe.</li>
+    <li>Wearing a mask is not necessary unless you are taking care of an infected person. The Centers for Disease Control (CDC) does recommend that only infected people wear masks to prevent the spread of the virus.</li>
+    <li>Wash your hands often with soap and water for at least 20 seconds, especially after going to the bathroom, before eating, and after blowing your nose, coughing, or sneezing.</li>
+    <li>If soap and water are not readily available, use an alcohol-based hand sanitiser with at least 60% alcohol. Always wash hands with soap and water when hands are visibly dirty.</li>
     
-    <table class="steps">
-      <tr>
-        <td>1.</td>
-        <td>Apply for the Pass</td>
-      </tr>
-      <tr>
-        <td>2.</td>
-        <td>Enter your personal details</td>
-      </tr>
-      <tr>
-        <td>3.</td>
-        <td>Download your Pass</td>
-      </tr>
-    </table>
-    <button onClick="location.href='{% url 'fillform' %}'" class="apply" type="submit">Apply</a>
-    
-  
+    </ol>
+</div>
+
+<div class="space"></div>
 
 </body>
 
+
+
+</body>
 </html>

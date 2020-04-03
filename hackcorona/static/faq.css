@@ -1,0 +1,185 @@
+body{
+	background-color: #ffffff;
+}
+.bg-light {
+    background-color:rgb(226, 36, 84)!important;
+    
+    height: 12vh;
+}
+.navbar-light .navbar-brand {
+    color: #fafbfc;
+}
+.navbar-brand {
+	font-size: 1.5rem;
+	font-weight: 25px;
+	
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 2rem;
+    padding-left: 2rem;
+    }
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color:rgb(255, 255, 255);
+    border: 2px solid white;
+    background-color: #ff3372;
+    border-radius: 50px;
+}
+#stay{
+	color: #ff3372;
+	font-size: 1.5rem;
+}
+.box1{
+	border: 2px solid #ff3372;
+	border-radius: 20px;
+	margin: 10vh 30vw;
+	height: 45vh;
+	background-color: white;
+}
+.title{
+	margin-top: 5vh;
+	text-align: center;
+	font-size: 2rem;
+	color: #ff3372;
+}
+.steps{
+	
+	color: #ff3372;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.5rem;
+}
+.apply{
+	color: white;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #ff3372;
+	height: 5vh;
+	width: 5vw;
+
+}
+.imag{
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10vh;
+	width: 70vw;
+	height: 70vh;
+}
+.he{
+	text-align: center;
+	font-size: 2.5rem;
+	letter-spacing: 0.1vw;
+	color: #ff3372;
+	margin-top: 15vh;
+}
+button{
+	margin:auto;
+  display:block;
+  margin-top: 5vh;
+}
+.lis{
+	margin-left: 14vw;
+	margin-right: auto;
+	line-height: 5vh;
+	color: #ff3372;
+	font-size: 1.5rem;
+}
+
+.accordion-section .panel-default > .panel-heading {
+    border: 0;
+    padding: 0;
+}
+.accordion-section .panel-default .panel-title a {
+    display: block;
+    
+    font-size: 1.5rem;
+    color: #ff3372;
+    text-decoration: none;
+}
+.accordion-section .panel-default .panel-title a:after {
+    
+   
+    font-size: 2rem;
+    content: "\f106";
+    float: right;
+    margin-top: -12px;
+}
+.accordion-section .panel-default .panel-title a.collapsed:after {
+    content: "\f107";
+    color: blue;
+}
+.accordion-section .panel-default .panel-body {
+    font-size: 1.2rem;
+    color: blue;
+    font-weight: 25px;
+}
+.faq{
+	text-align: center;
+}
+.space{
+	height: 100px;
+}
+.fas fa-angle-down{
+	float: right;
+}
+.w-100 {
+    width: 100%!important;
+    height: 91vh;
+}
+.box1 {
+    border: 2px solid #ff3372;
+    border-radius: 20px;
+    margin: 30vh 30vw;
+    height: 55vh;
+    background-color: white;
+    padding: 7vh;
+    padding-bottom: 8vh;
+}
+.navbar-nav {
+	color: #ff3372;
+}
+.accordion-section .panel-default .panel-title a.collapsed:after {
+    content: "\f107";
+    color: transparent;
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: transparent;
+    background-clip: border-box;
+     border: 0px solid rgba(0,0,0,.125); 
+    border-radius: .25rem;
+    text-decoration: none;
+}
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+     background-color: transparent; 
+     border-bottom: 0px solid rgba(0,0,0,.125); 
+}
+.btn-link:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+.btn-link{
+    color: #0056b3;
+    text-decoration: none;
+}
+.btn-link:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+.btn-link {
+    color: #ff3378;
+}
+.btn {
+    font-size: 1.4rem;
+    }
