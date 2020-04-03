@@ -59,4 +59,5 @@ class DownloadPDF(View):
 
 def index(request,uniquenumber):
     if PassModel.objects.filter(uniquenumber=uniquenumber).exists():
+        context={}
         return render(request, 'pdf_template.html', context=context)
