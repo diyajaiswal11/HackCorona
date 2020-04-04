@@ -8,4 +8,5 @@ urlpatterns = [
     path('pdf_download/<uniquenumber>/', views.DownloadPDF.as_view(), name="pdf_download"),
     path('precautions/',views.precautions,name='precautions'),
     path('faq/',views.faqpage,name='faqpage'),
+    path('helpline/pdf/',views.helpline,name='helpline')
 ]

@@ -20,6 +20,9 @@ def faqpage(request):
 def precautions(request):
     return render(request,'precautions.html')
 
+def helpline(request):
+    return render(request,'helpline.html')
+
 def fillform(request):
     if request.method=="POST":
         form=PassForm(request.POST,request.FILES) 
