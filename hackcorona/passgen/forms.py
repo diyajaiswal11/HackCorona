@@ -7,4 +7,9 @@ class PassForm(ModelForm):
     class Meta:
         model= PassModel
         fields='__all__'
-        exclude=['issuedate','uniquenumber']
+        exclude=['issuedate','uniquenumber','checked']
+
+class DownloadForm(ModelForm):
+    class Meta:
+        model=PassModel
+        fields=['aadharcardnumber']

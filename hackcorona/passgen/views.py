@@ -1,13 +1,14 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponseRedirect,HttpResponse
 from django.urls import reverse
-from .forms import PassForm
+from .forms import PassForm,DownloadForm
 from django.utils import timezone
 from io import BytesIO
 from django.template.loader import get_template
 from django.views import View
 from xhtml2pdf import pisa
 from .models import PassModel
+from django.contrib.auth.models import auth 
 from django.utils.translation import template
 
 # Create your views here.
@@ -36,6 +37,22 @@ def fillform(request):
         form=PassForm()
     context={'form':form }
     return render(request,'fillform.html',context)
+
+def download(request):
+    if request.method=="POST":
+        form=DownloadForm(request.POST)
+        if form.is_valid():
+            number=form.cleaned_data['aadharcardnumber']
+            if PassModel.objects.filter(aadharcardnumber=number).exists():
+                user=PassModel.objects.get(aadharcardnumber=number)
+                return HttpResponseRedirect(reverse('epass',args=[user.uniquenumber]))
+            else:
+                return redirect('download')
+    else:
+        form=DownloadForm()
+    context={'form':form}
+    return render(request,'download.html',context)
+
 
 def render_to_pdf(template_src, context_dict={}):
 	template = get_template(template_src)
@@ -79,7 +96,7 @@ def index(request,uniquenumber):
     try:
         if PassModel.objects.filter(uniquenumber=uniquenumber).exists:
             context={
-                'a':PassModel.objects.get(uniquenumber=uniquenumber)
+                'a':PassModel.objects.get(uniquenumber=uniquenumber)    
             }
             return render(request,'pdf_template.html',context=context)
     except PassModel.DoesNotExist:

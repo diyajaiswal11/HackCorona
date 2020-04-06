@@ -61,8 +61,21 @@ body{
 	background-color: #ff3372;
 	height: 7vh;
 	width: 10vw;
+	float:left;
+	margin-left:5vw;
 }
-	
+.apply3{
+	float: right;
+	color: white;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #ff3372;
+	height: 7vh;
+	width: 10vw;
+	margin-right: 5vw;
+}
+
 .imag{
 	display: block;
   margin-left: auto;

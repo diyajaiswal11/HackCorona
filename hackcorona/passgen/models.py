@@ -37,3 +37,4 @@ class PassModel(models.Model):
     attachphoto=models.ImageField(upload_to='profile_pics')
     attachidproof=models.ImageField(upload_to='id_proof')
     uniquenumber=models.CharField(max_length=10000,default=201301)
+    checked=models.BooleanField(default=0)

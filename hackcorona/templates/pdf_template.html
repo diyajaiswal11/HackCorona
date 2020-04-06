@@ -25,6 +25,13 @@
 		height: 30vh;
 		background-color: rgba(202, 165, 165, 0.733)!important;
 	}
+	.box3{
+		border: 2px solid #464042!important;
+		border-radius: 20px;
+		margin: 10vh 30vw;
+		height: 20vh;
+		background-color: rgba(202, 165, 165, 0.733)!important;
+	}
 	.apply1{
 		color: white;
 		text-align: center;
@@ -89,16 +96,21 @@
 	  <br>
 	  <br>
 	  <br>
-	  <div class="box2">
-					
+			{% if a.checked %}
+				<div class="box2">
 					<p class="title">Your Lockdown Pass is Ready!</p>
 					<div style="text-align: center;">
 					<button onClick="location.href='{% url 'pdf_view' a.uniquenumber %}'" class="apply1" >View Pass</a>
 					<button onClick="location.href='{% url 'pdf_download' a.uniquenumber %}'"class="apply2">Download Pass</a>
 					</div>
 				</div>
+			{% else %}
+				<div class="box3">
+					<p class="title">Your Details is not verified yet!</p>
+					<div style="text-align: center;">
+					</div>
 				</div>
-			</div>
+			{% endif %}
 		
 			<div class="col-md"></div>
 		</div>
