@@ -1,1 +1,1 @@
-web: gunicorn hackcorona.wsgi
+web: gunicorn hackcorona.wsgi.application
