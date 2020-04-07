@@ -1,0 +1,163 @@
+body{
+	background-image:url('corona1.jpg');
+	background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  
+}
+.bg-light {
+    background-color:rgb(226, 36, 84)!important;
+    
+    height: 12vh;
+}
+.navbar-light .navbar-brand {
+    color: #fafbfc;
+}
+.navbar-brand {
+	font-size: 1.5rem;
+	font-weight: 25px;
+	
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 2rem;
+    padding-left: 2rem;
+    }
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color:rgb(255, 255, 255);
+    border: 2px solid white;
+    background-color: #ff3372;
+    border-radius: 50px;
+}
+#stay{
+	color: #ff3372;
+	font-size: 1.5rem;
+}
+.box1{
+	border: 2px solid #464042!important;
+	border-radius: 20px;
+	margin: 10vh 30vw;
+	height: 15vh;
+	background-color: rgba(202, 165, 165, 0.733)!important;
+}
+.title{
+	margin-top: 5vh;
+	text-align: center;
+	font-size: 2rem;
+	color: #000000;
+}
+.steps{
+	
+	color: #030303;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.5rem;
+}
+.apply{
+	color: white;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #ff3372;
+	height: 7vh;
+	width: 10vw;
+	float:left;
+	margin-left:5vw;
+}
+.apply3{
+	float: right;
+	color: white;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #ff3372;
+	height: 7vh;
+	width: 10vw;
+	margin-right: 5vw;
+}
+
+.imag{
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10vh;
+	width: 70vw;
+	height: 70vh;
+}
+.he{
+	text-align: center;
+	font-size: 2rem;
+	color: #ff3372;
+}
+.he1{
+	text-align: center;
+	font-size: 2rem;
+	color: #ffffff;
+}
+button{
+	margin:auto;
+  display:block;
+  margin-top: 5vh;
+}
+.lis{
+	margin-left: 14vw;
+	margin-right: auto;
+	line-height: 5vh;
+	color: #ff3372;
+	font-size: 1.5rem;
+}
+
+.accordion-section .panel-default > .panel-heading {
+    border: 0;
+    background: #ff3372;
+    padding: 0;
+}
+.accordion-section .panel-default .panel-title a {
+    display: block;
+    
+    font-size: 1.5rem;
+    color: white;
+}
+.accordion-section .panel-default .panel-title a:after {
+    
+   
+    font-size: 2rem;
+    content: "\f106";
+    color: white;
+    float: right;
+    margin-top: -12px;
+}
+.accordion-section .panel-default .panel-title a.collapsed:after {
+    content: "\f107";
+}
+.accordion-section .panel-default .panel-body {
+    font-size: 1.2rem;
+    color: #ffffff;
+    font-weight: 25px;
+}
+.faq{
+	text-align: center;
+}
+.space{
+	height: 100px;
+}
+.fas fa-angle-down{
+	float: right;
+}
+.w-100 {
+    width: 100%!important;
+    height: 91vh;
+}
+.box1 {
+    border: 2px solid #ff3372;
+    border-radius: 20px;
+    margin: 30px 30vw;
+    margin-top: 27vh;
+    height: 55vh;
+    background-color: white;
+    padding: 7vh;
+    padding-bottom: 8vh;
+}
+.navbar-nav {
+	color: #ff3372;
+}
