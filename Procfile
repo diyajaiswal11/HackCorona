@@ -1,1 +1,1 @@
-web: gunicorn hackcorona.wsgi.application
+web: gunicorn hackcorona.wsgi --log-file -
